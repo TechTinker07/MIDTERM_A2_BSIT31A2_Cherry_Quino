@@ -1,0 +1,97 @@
+﻿@using Student_Class___Razor_Table_Rendering.Models
+@{
+    Layout = null;
+
+    var students = new List<Student>
+    {
+        new Student ("Saturnina", "Rizal") {Title = "Ms.", Course = "BSIT" , Section = "31A2", Birthday = new DateTime(2003, 5, 12)},
+        new Student ("Concepcion", "Rizal") {Title = "Ms.", Course = "BSIT" , Section = "31A2", Birthday = new DateTime(2000, 6, 12)},
+        new Student ("Melchora", "Aquino") {Title = "Ms.", Course = "BSIT" , Section = "31A2", Birthday = new DateTime(2000, 6, 1)},
+        new Student ("Gabriela", "Silang") {Title = "Ms.", Course = "BSIT" , Section = "31A2", Birthday = new DateTime(2002, 3, 19)},
+        new Student ("Andres", "Bonifacio") {Title = "Mr.", Course = "BSIT" , Section = "31A2", Birthday = new DateTime(2003, 11, 30)},
+        new Student ("Paciano", "Rizal") {Title = "Mr.", Course = "BSCS" , Section = "31A3", Birthday = new DateTime(2004, 3, 9)},
+        new Student ("Emilio", "Aguinaldo") {Title = "Mr.", Course = "BSCS" , Section = "31A3", Birthday = new DateTime(2001, 3, 22)},
+        new Student ("Apolinario", "Mabini") {Title = "Mr.", Course = "BSCS" , Section = "31A3", Birthday = new DateTime(2004, 7, 23)},
+        new Student ("Manuel", "Quezon") {Title = "Mr.", Course = "BSCS" , Section = "31A3", Birthday = new DateTime(2001, 8, 19)},
+        new Student ("Antonio", "Luna") {Title = "Mr.", Course = "BSCS" , Section = "31A3", Birthday = new DateTime(2001, 10, 29)},
+
+    };
+
+    students[0].SetGender(Gender.Female);
+    students[1].SetGender(Gender.Female);
+    students[2].SetGender(Gender.Female);
+    students[3].SetGender(Gender.Female);
+    students[4].SetGender(Gender.Male);
+    students[5].SetGender(Gender.Male);
+    students[6].SetGender(Gender.Male);
+    students[7].SetGender(Gender.Male);
+    students[8].SetGender(Gender.Male);
+    students[9].SetGender(Gender.Male);
+
+    }
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta  charset="utf-8" />
+    <title>Student List</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        h2{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+       th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        thead {
+            background-color: #f0f0f0;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h2>🎓 Student List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Gender</th>
+                <th>Course</th>
+                <th>Section</th>
+                <th>Birthday</th>
+                <th>Age</th>
+
+            </tr>
+        </thead>
+     <tbody>
+        @foreach (var student in students)
+        {
+         <tr>
+            <td>@student.FullName</td>
+            <td>@student.Gender</td>
+            <td>@student.Course</td>
+            <td>@student.Section</td>
+            <td>@student.Birthday.ToShortDateString()</td>
+            <td>@student.Age</td>
+         </tr>
+
+        }
+    </tbody>
+    </table>
+</body>
+</html>
