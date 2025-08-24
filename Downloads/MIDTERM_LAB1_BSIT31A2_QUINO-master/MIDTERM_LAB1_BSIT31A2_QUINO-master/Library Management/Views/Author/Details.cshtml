@@ -1,0 +1,44 @@
+﻿@model Library_Management.Models.Author
+
+<h2>Author Details</h2>
+
+<div class="card mb-3" style="max-width: 600px;">
+    <div class="row g-0">
+        <div class="col-md-4">
+            @if (!string.IsNullOrEmpty(Model.ProfileImageUrl))
+            {
+                <img src="@Model.ProfileImageUrl" class="img-fluid rounded-start" alt="Profile Image" />
+            }
+            else
+            {
+                <span>No Image</span>
+            }
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">@Model.Name</h5>
+                <p class="card-text"><strong>Birthdate:</strong> @(Model.Birthdate?.ToShortDateString() ?? "N/A")</p>
+                <p class="card-text"><strong>Biography:</strong> @Model.Biography</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h3>Books by @Model.Name</h3>
+@if (Model.Books != null && Model.Books.Any())
+{
+    <ul class="list-group">
+        @foreach (var book in Model.Books)
+        {
+            <li class="list-group-item">
+                <strong>@book.Title</strong> - @book.PublishedDate?.ToShortDateString()
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>No books found for this author.</p>
+}
+
+<a asp-action="Index" class="btn btn-secondary mt-3">Back to Authors</a>

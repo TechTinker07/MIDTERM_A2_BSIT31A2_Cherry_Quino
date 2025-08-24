@@ -1,0 +1,40 @@
+﻿@model List<Library_Management.Models.Author>
+
+<h2>Authors</h2>
+<a asp-action="Add" class="btn btn-primary">Add Author</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Birthdate</th>
+            <th>Profile Image</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var author in Model)
+        {
+            <tr>
+                <td>@author.Name</td>
+                <td>@(author.Birthdate?.ToShortDateString() ?? "N/A")</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(author.ProfileImageUrl))
+                    {
+                        <img src="@author.ProfileImageUrl" width="50" />
+                    }
+                    else
+                    {
+                        <span>N/A</span>
+                    }
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@author.AuthorId">Details</a>
+                    <a asp-action="Edit" asp-route-id="@author.AuthorId">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@author.AuthorId">Delete</a>
+                    <a asp-action="Archive" asp-route-id="@author.AuthorId">Archive</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

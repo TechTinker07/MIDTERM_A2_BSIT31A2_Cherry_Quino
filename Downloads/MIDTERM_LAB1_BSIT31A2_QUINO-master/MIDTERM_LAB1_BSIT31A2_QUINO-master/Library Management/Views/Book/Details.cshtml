@@ -1,0 +1,65 @@
+﻿@model Library_Management.Models.BookListViewModel
+
+<div class="modal-header bg-primary text-white">
+    <h5 class="modal-title">@Model.Title</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+
+<div class="modal-body">
+    <!-- Book Info -->
+    <dl class="row mb-0">
+        <dt class="col-sm-4">ISBN</dt>
+        <dd class="col-sm-8">@Model.ISBN</dd>
+
+        <dt class="col-sm-4">Author</dt>
+        <dd class="col-sm-8">@Model.AuthorName</dd>
+
+        <dt class="col-sm-4">Genre</dt>
+        <dd class="col-sm-8">@Model.Genre</dd>
+
+        <dt class="col-sm-4">Published</dt>
+        <dd class="col-sm-8">@Model.PublishedDate?.ToString("yyyy-MM-dd")</dd>
+
+        <dt class="col-sm-4">Available Copies</dt>
+        <dd class="col-sm-8">@Model.AvailableCopies / @Model.TotalCopies</dd>
+    </dl>
+
+    <hr />
+
+    <!-- Add Copy Button -->
+    <form asp-action="AddCopy" asp-controller="Book" method="post" class="mb-3">
+        <input type="hidden" name="id" value="@Model.BookId" />
+        <button type="submit" class="btn btn-success w-100">Add Copy</button>
+    </form>
+
+    <h6>Book Copies</h6>
+    @if (Model.BookCopies != null && Model.BookCopies.Any())
+    {
+        <ul class="list-group">
+            @foreach (var copy in Model.BookCopies)
+            {
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>@copy.Condition</span>
+
+                    @if (copy.PulloutDate == null)
+                    {
+                        <form asp-action="PullOut" asp-controller="Book" method="post" class="d-flex">
+                            <input type="hidden" name="copyId" value="@copy.Id" />
+                            <input type="text" name="reason" class="form-control form-control-sm me-1" placeholder="Reason" required />
+                            <button type="submit" class="btn btn-warning btn-sm">Pull Out</button>
+                        </form>
+                    }
+                    else
+                    {
+                        <span class="text-muted">Pulled: @copy.PulloutReason (@copy.PulloutDate?.ToString("yyyy-MM-dd"))</span>
+                    }
+                </li>
+            }
+        </ul>
+    }
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" onclick="location.href='@Url.Action("Index", "Book")'">Back to Library</button>
+
+</div>
