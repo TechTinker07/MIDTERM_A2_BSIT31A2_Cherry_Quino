@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36408.4 d17.14
+VisualStudioVersion = 17.14.36408.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library Management", "Library Management\Library Management.csproj", "{CE2A2D8E-32FF-4538-914F-CE629B150A75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryManagement", "Library Management\LibraryManagement.csproj", "{CE2A2D8E-32FF-4538-914F-CE629B150A75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library Management Domain", "Library Management Domain\Library Management Domain.csproj", "{B5D77005-BE6E-48EA-8E64-B375238C0C24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library Management Domain", "Library Management Domain\Library Management Domain.csproj", "{B5D77005-BE6E-48EA-8E64-B375238C0C24}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

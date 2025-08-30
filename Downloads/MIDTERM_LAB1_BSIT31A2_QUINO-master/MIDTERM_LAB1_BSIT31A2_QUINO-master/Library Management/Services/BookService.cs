@@ -5,7 +5,7 @@ using System.Linq;
 using Domain = Library_Management_Domain.Entities;
 using Models = Library_Management.Models;
 
-public class BookService
+public class BookService : IBookService
 {
     private readonly ICollection<Domain.Book> _books = new List<Domain.Book>();
     private readonly ICollection<Domain.Author> _authors = new List<Domain.Author>();
@@ -15,7 +15,7 @@ public class BookService
     {
         SeedData();
     }
-     private void SeedData()
+    private void SeedData()
     {
         // === First Book
         var author1 = new Domain.Author
@@ -288,7 +288,7 @@ public class BookService
         return editBookViewModel ?? throw new KeyNotFoundException("Book not found");
     }
 
-    internal void UpdateBook(Models.EditBookViewModel vm)
+    public void UpdateBook(Models.EditBookViewModel vm)
     {
         ArgumentNullException.ThrowIfNull(vm, nameof(vm));
 
@@ -367,19 +367,8 @@ public class BookService
             _bookCopies.Remove(bookCopy);
         }
     }
-    private static BookService? _instance;
-    public static BookService Instance
-    {
-        get
-        {
-            if (_instance == null)
-            {
-                _instance = new BookService();
-            }
-            return _instance;
-        }
-    }
-   public void AddCopy(Guid bookId)
+  
+    public void AddCopy(Guid bookId)
     {
         var book = _books.FirstOrDefault(b => b.Id == bookId);
         if (book == null)
@@ -396,7 +385,7 @@ public class BookService
             Source = "Manual Add",
             CoverImageUrl = coverImage
         };
-      _bookCopies.Add(newCopy);
+        _bookCopies.Add(newCopy);
     }
     public BookCopy? GetBookCopyById(Guid copyId)
     {
