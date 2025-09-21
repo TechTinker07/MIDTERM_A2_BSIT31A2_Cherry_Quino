@@ -1,0 +1,153 @@
+﻿@model IEnumerable<MoodPlaylist.SQLite.Repository.Models.Playlist>
+@{
+    ViewData["Title"] = "My Playlists";
+}
+
+<!-- Header -->
+<div class="text-center mb-5">
+    <h1 class="fw-bold text-gradient">🎵 My Mood Playlists</h1>
+    <p class="text-muted">Create, explore, and vibe with your custom playlists.</p>
+</div>
+
+<button class="btn btn-gradient rounded-circle shadow-lg position-fixed"
+        style="bottom: 30px; right: 30px; width:60px; height:60px; font-size:24px;"
+        data-bs-toggle="modal" data-bs-target="#addPlaylistModal">
+    +
+</button>
+
+
+<!-- Add Playlist Floating Button -->
+<button class="btn btn-gradient rounded-circle shadow-lg position-fixed"
+        style="bottom: 30px; right: 30px; width:60px; height:60px; font-size:24px;"
+        data-bs-toggle="modal" data-bs-target="#addPlaylistModal">
+    +
+</button>
+
+<!-- Playlist Cards -->
+<div class="row g-4">
+    @foreach (var playlist in Model)
+    {
+        <div class="col-md-4 col-sm-6 col-12">
+            <div class="card playlist-card shadow-lg h-100">
+                <img src="@(playlist.CoverUrl ?? "/images/default-cover.jpg")" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title text-white">@playlist.Name</h5>
+                    <p class="text-white">@playlist.Mood</p>
+                    <p class="text-white card-text text-truncate">@playlist.Description</p>
+                    <a href="@Url.Action("Details", "Playlist", new { id = playlist.Id })" class="btn btn-sm btn-primary">View Songs</a>
+
+                    <!-- DELETE Playlist Button -->
+                    <form asp-controller="Playlist" asp-action="DeletePlaylist" method="post" class="d-inline">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="id" value="@playlist.Id" />
+                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                    </form>
+                </div>
+                </div>
+            </div>
+        
+    }
+</div>
+
+
+<!-- Add Playlist Modal -->
+<div class="modal fade" id="addPlaylistModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark text-white rounded-4 shadow-lg">
+            <div class="modal-header border-0">
+                <h5 class="modal-title">➕ Add New Playlist</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <form asp-controller="Playlist" asp-action="Create" method="post">
+                @Html.AntiForgeryToken()
+                <div class="mb-3">
+                    <label class="form-label">Playlist Name</label>
+                    <input type="text" name="Name" class="form-control rounded-3" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Mood</label>
+                    <input type="text" name="Mood" class="form-control rounded-3">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Description</label>
+                    <textarea name="Description" class="form-control rounded-3"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Cover Image URL</label>
+                    <input type="text" name="CoverUrl" class="form-control rounded-3">
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-secondary rounded-3" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-gradient rounded-3">Save</button>
+                </div>
+            </form>
+
+
+<!-- Custom CSS -->
+<style>
+    body {
+        background: #121212;
+        color: #fff;
+    }
+
+    .text-gradient {
+        background: linear-gradient(45deg, #ff4d6d, #6a5af9);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .btn-gradient {
+        background: linear-gradient(45deg, #6a5af9, #ff4d6d);
+        border: none;
+        color: white;
+        transition: 0.3s;
+    }
+
+        .btn-gradient:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+
+                .playlist-card {
+                    background: #1e1e1e;
+                    border-radius: 1rem;
+                    transition: transform 0.3s, box-shadow 0.3s;
+                }
+
+                    .playlist-card:hover {
+                        transform: translateY(-5px);
+                        box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+                    }
+
+                .card-img-top {
+                    height: 200px;
+                    object-fit: cover;
+                    border-top-left-radius: 1rem;
+                    border-top-right-radius: 1rem;
+                }
+
+                .text-truncate {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+
+                .modal-content {
+                    background: #1e1e1e;
+                    color: white;
+                    border-radius: 1rem;
+                }
+
+                .btn-gradient {
+                    background: linear-gradient(45deg, #6a5af9, #ff4d6d);
+                    border: none;
+                    color: white;
+                    transition: 0.3s;
+                }
+
+                    .btn-gradient:hover {
+                        opacity: 0.9;
+                        transform: scale(1.05);
+                    }
+
+</style>

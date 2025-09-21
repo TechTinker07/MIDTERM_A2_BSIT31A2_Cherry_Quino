@@ -1,0 +1,14 @@
+C:\Users\cherr.LAPTOP-D4D2IDL7.000\source\repos\PF_Lab1_MoodPlaylist_BSIT31A2_Quino_Cherry\src\MoodPlaylist.SQLite.Repository\bin\Debug\net9.0\MoodPlaylist.SQLite.Repository.deps.json
+C:\Users\cherr.LAPTOP-D4D2IDL7.000\source\repos\PF_Lab1_MoodPlaylist_BSIT31A2_Quino_Cherry\src\MoodPlaylist.SQLite.Repository\bin\Debug\net9.0\MoodPlaylist.SQLite.Repository.runtimeconfig.json
+C:\Users\cherr.LAPTOP-D4D2IDL7.000\source\repos\PF_Lab1_MoodPlaylist_BSIT31A2_Quino_Cherry\src\MoodPlaylist.SQLite.Repository\bin\Debug\net9.0\MoodPlaylist.SQLite.Repository.dll
+C:\Users\cherr.LAPTOP-D4D2IDL7.000\source\repos\PF_Lab1_MoodPlaylist_BSIT31A2_Quino_Cherry\src\MoodPlaylist.SQLite.Repository\bin\Debug\net9.0\MoodPlaylist.SQLite.Repository.pdb
+C:\Users\cherr.LAPTOP-D4D2IDL7.000\source\repos\PF_Lab1_MoodPlaylist_BSIT31A2_Quino_Cherry\src\MoodPlaylist.SQLite.Repository\obj\Debug\net9.0\MoodPlaylist.SQLite.Repository.csproj.AssemblyReference.cache
+C:\Users\cherr.LAPTOP-D4D2IDL7.000\source\repos\PF_Lab1_MoodPlaylist_BSIT31A2_Quino_Cherry\src\MoodPlaylist.SQLite.Repository\obj\Debug\net9.0\MoodPlaylist.SQLite.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cherr.LAPTOP-D4D2IDL7.000\source\repos\PF_Lab1_MoodPlaylist_BSIT31A2_Quino_Cherry\src\MoodPlaylist.SQLite.Repository\obj\Debug\net9.0\MoodPlaylist.SQLite.Repository.AssemblyInfoInputs.cache
+C:\Users\cherr.LAPTOP-D4D2IDL7.000\source\repos\PF_Lab1_MoodPlaylist_BSIT31A2_Quino_Cherry\src\MoodPlaylist.SQLite.Repository\obj\Debug\net9.0\MoodPlaylist.SQLite.Repository.AssemblyInfo.cs
+C:\Users\cherr.LAPTOP-D4D2IDL7.000\source\repos\PF_Lab1_MoodPlaylist_BSIT31A2_Quino_Cherry\src\MoodPlaylist.SQLite.Repository\obj\Debug\net9.0\MoodPlaylist.SQLite.Repository.csproj.CoreCompileInputs.cache
+C:\Users\cherr.LAPTOP-D4D2IDL7.000\source\repos\PF_Lab1_MoodPlaylist_BSIT31A2_Quino_Cherry\src\MoodPlaylist.SQLite.Repository\obj\Debug\net9.0\MoodPlaylist.SQLite.Repository.dll
+C:\Users\cherr.LAPTOP-D4D2IDL7.000\source\repos\PF_Lab1_MoodPlaylist_BSIT31A2_Quino_Cherry\src\MoodPlaylist.SQLite.Repository\obj\Debug\net9.0\refint\MoodPlaylist.SQLite.Repository.dll
+C:\Users\cherr.LAPTOP-D4D2IDL7.000\source\repos\PF_Lab1_MoodPlaylist_BSIT31A2_Quino_Cherry\src\MoodPlaylist.SQLite.Repository\obj\Debug\net9.0\MoodPlaylist.SQLite.Repository.pdb
+C:\Users\cherr.LAPTOP-D4D2IDL7.000\source\repos\PF_Lab1_MoodPlaylist_BSIT31A2_Quino_Cherry\src\MoodPlaylist.SQLite.Repository\obj\Debug\net9.0\MoodPlaylist.SQLite.Repository.genruntimeconfig.cache
+C:\Users\cherr.LAPTOP-D4D2IDL7.000\source\repos\PF_Lab1_MoodPlaylist_BSIT31A2_Quino_Cherry\src\MoodPlaylist.SQLite.Repository\obj\Debug\net9.0\ref\MoodPlaylist.SQLite.Repository.dll
